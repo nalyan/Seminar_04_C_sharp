@@ -1,20 +1,11 @@
 ﻿// Написать программу копирования массива
 
-void FillArray(int[] array, int min, int max)
+void CopyArray(int[] array, int[] newArray)
 {
-    var random = new Random();
-    for (int i = 0; i < array.Length; i++) array[i] = random.Next(min, max);
-}
-int NewArray(int[] array)
-{
-    int[] newArray = new int[array.Length];
-    int result = 0;
     for (int i = 0; i < array.Length; i++) 
     {
-        newArray[i] = array[i]*2;
-        result = result + newArray[i];
+        newArray[i] = array[i];
     }
-    return result;
 }
 void PrintArray(int[] array)
 {
@@ -23,13 +14,9 @@ void PrintArray(int[] array)
 }
 
 Console.Clear();
-int[] array = new int[10];
-FillArray(array, -100, 100);
+int[] array = {10, -54, 0, 489, -2, 86, 1};
 PrintArray(array);
 
-//int[] newArray = 
-
-//NewArray(array);
-//PrintArray(array);
-
-
+int[] newArray = new int[array.Length];
+CopyArray(array, newArray);
+PrintArray(newArray);
